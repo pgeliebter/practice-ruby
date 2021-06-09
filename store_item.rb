@@ -9,27 +9,50 @@
 # item1 = { name: "water", :goal => "hey" }
 
 
-class Item
-  def initialize(input_name,input_color,input_price,input_brand)
-    @name = input_name
-    @color = input_color
+class Drinks
+
+  def initialize(input_size,input_price,input_name,input_taxabale)
+    @size = input_size
     @price = input_price
-    @brand = input_brand
-  end
-  def brand=(input_brand)
-    @brand = input_brand
-  end
-  def brand
-    @brand
-  end
-  def price=(input_price)
-    @price = price
-  end
-  def price
-    @price
+    @name = input_name
+    @taxabale = input_taxabale
   end
 
+  def name
+    @name
+  end
+
+  def size
+    @size
+  end
+  
+  def price
+    if taxabale == true
+      @price * 1.0875
+    else
+      @price
+    end
+  end
+
+  def taxabale
+    @taxabale
+  end
+
+  def price=(input_price)
+    @price = input_price
+  end
+
+  def total
+    puts "For a #{size}oz #{name}, your price is #{price}"
+  end
 
 end
+
+drink1 = Drinks.new(20.0,2.00,"Cherry Coke Zero",true)
+drink2 = Drinks.new(16.9,1.0,"Water",false)
+
+drink1.price = 1.75
+
+drink1.total
 
 
