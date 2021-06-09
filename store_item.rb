@@ -11,7 +11,7 @@ class Drinks
     @taxabale = input_taxabale
   end
 
-  def price
+  def total_price
     if taxabale == true
       @price * 1.0875
     else
@@ -20,7 +20,7 @@ class Drinks
   end
 
   def total
-    puts "For a #{size}oz #{name}, your price is #{price}"
+    puts "For a #{size}oz #{name}, your total is #{total_price}"
   end
 
 end
