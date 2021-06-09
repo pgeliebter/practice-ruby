@@ -1,7 +1,8 @@
 class Drinks
 
-  attr_reader :name, :size, :taxabale
-  attr_writer :price, :taxabale
+  attr_reader :name, :size
+  attr_writer :price
+  attr_accessor :taxabale
 
   def initialize(input_size,input_price,input_name,input_taxabale)
     @size = input_size
