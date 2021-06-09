@@ -1,6 +1,3 @@
-
-
-
 class Drinks
 
   attr_reader :name, :size, :taxabale
