@@ -1,8 +1,7 @@
 class Drinks
 
   attr_reader :name, :size
-  attr_writer :price
-  attr_accessor :taxabale
+  attr_accessor :taxable, :price
 
   def initialize(input_options)
     @size = input_options[:size]
@@ -36,17 +35,24 @@ drink_array << drink2
 
 #drink1.total
 
+# lists all drinks
 puts "Here is a list of all our drinks:"
 drink_array.each do |x|
   puts x.name
 end
 
+# takes response of typed drink and returns total price
 puts "Choose one of our drinks by typing it in below:"
 response = gets.chomp.split.map(&:capitalize).join(' ')
 drink_array.each do |x|
+  
   if response == x.name
-    x.total
-  else
+    if x.taxable
+      puts "Your item has tax so:"
+      x.total
+    else
+      x.total
+    end
   end
 end
 
