@@ -4,15 +4,15 @@ class Drinks
   attr_writer :price
   attr_accessor :taxabale
 
-  def initialize(input_size,input_price,input_name,input_taxabale)
-    @size = input_size
-    @price = input_price
-    @name = input_name
-    @taxabale = input_taxabale
+  def initialize(input_options)
+    @size = input_options[:size]
+    @price = input_options[:price]
+    @name = input_options[:name]
+    @taxable = input_options[:taxable]
   end
 
   def total_price
-    if taxabale == true
+    if @taxable == true
       @price * 1.0875
     else
       @price
@@ -25,8 +25,8 @@ class Drinks
 
 end
 
-drink1 = Drinks.new(20.0,2.00,"Cherry Coke Zero",true)
-drink2 = Drinks.new(16.9,1.0,"Water",false)
+drink1 = Drinks.new(size: 20.0, price: 2.00, name: "Cherry Coke Zero", taxable: true)
+drink2 = Drinks.new(size: 16.9, price: 1.0, name: "Water", taxable: false)
 
 drink1.price = 1.75
 
