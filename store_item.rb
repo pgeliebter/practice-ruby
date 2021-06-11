@@ -1,5 +1,4 @@
 class Drinks
-
   attr_reader :name, :size
   attr_accessor :taxable, :price
 
@@ -10,7 +9,7 @@ class Drinks
     @taxable = input_options[:taxable]
   end
 
-  def total_price
+  def totalPrice
     if @taxable == true
       @price * 1.0875
     else
@@ -21,7 +20,6 @@ class Drinks
   def total
     puts "For a #{size}oz #{name}, your total is #{total_price}"
   end
-
 end
 
 drink1 = Drinks.new(size: 20.0, price: 2.00, name: "Cherry Coke Zero", taxable: true)
@@ -43,9 +41,8 @@ end
 
 # takes response of typed drink and returns total price
 puts "Choose one of our drinks by typing it in below:"
-response = gets.chomp.split.map(&:capitalize).join(' ')
+response = gets.chomp.split.map(&:capitalize).join(" ")
 drink_array.each do |x|
-  
   if response == x.name
     if x.taxable
       puts "Your item has tax so:"
@@ -55,4 +52,3 @@ drink_array.each do |x|
     end
   end
 end
-

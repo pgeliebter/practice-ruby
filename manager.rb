@@ -1,5 +1,5 @@
 class Employee
-  attr_reader :first_name, :last_name, :active :salary
+  attr_reader :first_name, :last_name, :active, :salary
   attr_writer :active
 
   def initialize(input_options)
