@@ -1,6 +1,6 @@
 require "./itemsable.rb"
 
-class Drinks
+class Drink
   include Itemsable
 
   def initialize(input_options)

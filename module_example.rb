@@ -1,4 +1,4 @@
-module Vehicle
+module Vehicable
   attr_reader :speed, :direction
 
   def brake
@@ -20,7 +20,7 @@ module Vehicle
 end
 
 class Car
-  include Vehicle
+  include Vehicable
 
   def honk_horn
     puts "Beeeeeeep!"
@@ -28,7 +28,7 @@ class Car
 end
 
 class Bike
-  include Vehicle
+  include Vehicable
 
   def ring_bell
     puts "Ring ring!"
